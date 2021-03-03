@@ -7,5 +7,4 @@ for line in f:
         continue
     else:
         education_list_1.append(list_string[2][1:-1])
-education_list_1.sort()
-education_list_2.append(education_list_1[0]) 
+education_list_1.sort() 

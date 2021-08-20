@@ -358,10 +358,10 @@ from
 	 		f.departure_airport='AAQ' and (f.actual_departure between '2016-12-01' and '2017-03-01')) fa
     		left join dst_project.ticket_flights tf on fa.flight_id=tf.flight_id
 	group by 
-	 	fa.flight_id, fa.departure_date, fa.flight_duration, fa.departure_city, 						fa.arrival_airport, fa.arrival_city, fa.distance, fa.aircraft_code) tfa
+	 	fa.flight_id, fa.departure_date, fa.flight_duration, fa.departure_city, fa.arrival_airport, fa.arrival_city, fa.distance, fa.aircraft_code) tfa
 		join dst_project.aircrafts ac on tfa.aircraft_code=ac.aircraft_code
 		right join dst_project.seats s on tfa.aircraft_code=s.aircraft_code
 group by 
-	tfa.flight_id, tfa.departure_date, tfa.departure_city, tfa.arrival_airport, tfa.arrival_city, tfa.distance, 		tfa.aircraft_code, tfa.flight_duration, ac.model, tfa.busy_seats, tfa.total_amount_tickets, 		tfa.busy_business, tfa.amount_business
+	tfa.flight_id, tfa.departure_date, tfa.departure_city, tfa.arrival_airport, tfa.arrival_city, tfa.distance, tfa.aircraft_code, tfa.flight_duration, ac.model, tfa.busy_seats, tfa.total_amount_tickets, tfa.busy_business, tfa.amount_business
 order by
 	tfa.departure_date
